@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_harjoitukset</title>
+</head>
+<body>
+    <h1>Javascript jatkuu</h1>
+    <script>
+
+ /*
+- Luo muuttuja nimeltään age ja anna sille kokonaislukuarvo.
+- Luo muuttuja nimeltään name ja anna sille merkkijonoarvo.
+- Luo muuttuja nimeltään isStudent ja anna sille totuusarvo (boolean).
+- Luo muuttuja nimeltään hobbies ja anna sille taulukko, joka sisältää muutamia merkkijonoarvoja (esim. harrastukset).
+- Luo info-olio eli objekti, jossa on kaksi ominaisuutta: schoolName (merkkijono) ja grade (kokonaisluku).
+
+- Käytä console.log() -metodia tulostamaan jokainen muuttuja konsoliin.
+
+- Käytä typeof-operatoria tarkistaaksesi jokaisen muuttujan tietotyypin ja tulosta tulos console.log()-metodilla.
+*/
+        // Luo muuttuja nimeltään age ja anna sille kokonaislukuarvo.
+        let age = 25;  // Muutettu merkkijonosta kokonaisluvuksi
+        
+        // Luo muuttuja nimeltään name ja anna sille merkkijonoarvo
+        let name = "Mikko";
+
+        // Luo muuttuja nimeltään isStudent ja anna sille totuusarvo (boolean)
+        let isStudent = true;
+
+        // Luo muuttuja nimeltään hobbies ja anna sille taulukko, joka sisältää muutamia merkkijonoarvoja
+        let hobbies = ["lukeminen", "matkustaminen", "valokuvaus"];
+
+        // Luo info-olio eli objekti, jossa on kaksi ominaisuutta: schoolName (merkkijono) ja grade (kokonaisluku)
+        let info = {
+            schoolName: "Business College Helsinki",
+            grade: 1
+        };
+
+        // Käytetään console.log() tulostamaan muuttujat konsoliin:
+        console.log(age);      // Tulostaa 25
+        console.log(name);     // Tulostaa "Mikko"
+        console.log(isStudent); // Tulostaa true
+        console.log(hobbies);  // Tulostaa ["lukeminen", "matkustaminen", "valokuvaus"]
+        console.log(info);     // Tulostaa { schoolName: "Business College Helsinki", grade: 1 }
+
+        // Käytetään typeof-operatoria tarkistamaan muuttujien tietotyypit:
+        console.log("age tyyppi:", typeof age); // number
+        console.log("name tyyppi:", typeof name); // string
+        console.log("isStudent tyyppi:", typeof isStudent); // boolean
+        console.log("hobbies tyyppi:", typeof hobbies); // object (taulukot ovat objekti)
+        console.log("info tyyppi:", typeof info); // object (olio)
+
+// Täydennä funktio convertNumberToString niin, että se muuntaa saamansa numeron merkkijonoksi.
+// Täydennä funktio convertStringToNumber niin, että se muuntaa saamansa merkkijonon numeroksi.
+
+// Funktio, joka muuntaa numeron merkkijonoksi
+function convertNumberToString(number) {
+  return number.toString(); // Käytetään .toString() muuntamaan numero
+  // merkkijonoksi
+}
+
+// Funktio, joka muuntaa merkkijonon numeroksi
+function convertStringToNumber(string) {
+  return Number(string); // Käytetään Number() funktiota,
+  // joka muuntaa merkkijonon numeroksi
+}
+
+// Esimerkki - älä muokkaa
+console.log(convertNumberToString(42)); // haluttu vastaus: "42"
+console.log(convertNumberToString(97)); // haluttu vastaus: "97"
+console.log(convertNumberToString(11)); // haluttu vastaus: "11"
+
+console.log(convertStringToNumber('42')); // haluttu vastaus: 42
+console.log(convertStringToNumber('97')); // haluttu vastaus: 97
+console.log(convertStringToNumber('11')); // haluttu vastaus: 11
+
+// Määrittele funktio, joka muuntaa lämpötilan Fahrenheit-asteista Celsius-asteiksi.
+// Tämä funktio käyttää kaavaa (Fahrenheit - 32) * 5/9
+// Saatu lämpötila pyöristetään yhteen desimaaliin tarkkuuden vuoksi.
+
+function fahrenheitToCelsius(fahrenheit) {
+  // Käytetään kaavaa Fahrenheit -> Celsius
+  let celsius = (fahrenheit - 32) * 5 / 9;
+  
+  // Pyöristetään tulos yhteen desimaaliin
+  return celsius.toFixed(1);
+}
+
+// Esimerkki - älä muokkaa
+console.log(fahrenheitToCelsius(21)); // haluttu tulos: "-6,1"
+
+/*
+- Luo muuttuja nimeltä 'num1' ja anna sille liukulukuarvo.
+- Luo muuttuja nimeltä 'num2' ja anna sille eri liukulukuarvo.
+
+- Pyöristä sekä 'num1' että 'num2' lähimpään kokonaislukuun ja tallenna tulokset muuttujiin 'roundedNum1' ja 'roundedNum2'.
+- Laske neliöjuuri 'roundedNum1':stä ja tallenna se muuttujaan nimeltä 'sqrtNum1'.
+- Etsi suurempi numero 'roundedNum1':n ja 'roundedNum2':n välillä ja tallenna se muuttujaan nimeltä 'maxNum'.
+
+- Käytä console.log() -funktiota tulostamaan 'roundedNum1', 'roundedNum2', 'sqrtNum1' ja 'maxNum' konsoliin.
+- Käytä typeof operaattoria tarkistaaksesi jokaisen uuden muuttujan tietotyypin ja tulosta tulos käyttäen console.log().
+*/
+
+// Luo muuttuja nimeltä 'num1' ja anna sille liukulukuarvo
+let num1 = 7.6;
+
+// Luo muuttuja nimeltä 'num2' ja anna sille eri liukulukuarvo
+let num2 = 3.2;
+
+// Pyöristä 'num1' ja 'num2' lähimpään kokonaislukuun ja tallenna tulokset muuttujiin 'roundedNum1' ja 'roundedNum2'
+let roundedNum1 = Math.round(num1);
+let roundedNum2 = Math.round(num2);
+
+// Laske neliöjuuri 'roundedNum1':stä ja tallenna se muuttujaan nimeltä 'sqrtNum1'
+let sqrtNum1 = Math.sqrt(roundedNum1);
+
+// Etsi suurempi numero 'roundedNum1':n ja 'roundedNum2':n välillä ja tallenna se muuttujaan nimeltä 'maxNum'
+let maxNum = Math.max(roundedNum1, roundedNum2);
+
+// Tulostetaan 'roundedNum1', 'roundedNum2', 'sqrtNum1' ja 'maxNum' konsoliin
+console.log("Rounded num1:", roundedNum1);
+console.log("Rounded num2:", roundedNum2);
+console.log("Square root of rounded num1:", sqrtNum1);
+console.log("Max of rounded num1 and num2:", maxNum);
+
+// Käytetään typeof-operatoria tarkistaaksemme jokaisen muuttujan tietotyypin ja tulostetaan tulos konsoliin
+console.log("Type of roundedNum1:", typeof roundedNum1); // number
+console.log("Type of roundedNum2:", typeof roundedNum2); // number
+console.log("Type of sqrtNum1:", typeof sqrtNum1); // number
+console.log("Type of maxNum:", typeof maxNum); // number
+
+/**Tehtävä: Jakolasku
+ * Kuvitellaan, että olet matematiikan opettaja, ja haluat laatia yksinkertaisen tehtävän oppilaillesi. Tehtäväsi on luoda ohjelma, joka laskee kahden luvun jakolaskun ja tulostaa tuloksen.
+ * - Luo kaksi muuttujaa, ja anna niille arvot.
+ * - Laske näiden kahden numeron jakolaskun tulos ja tallenna se uuteen muuttujaan
+ * - Tulosta vastaus konsoliin.
+ */
+
+// Luo kaksi muuttujaa ja anna niille arvot
+let num3 = 20;
+let num4 = 4;
+
+// Laske näiden kahden numeron jakolaskun tulos ja tallenna se uuteen
+// muuttujaan
+let divisionResult = num3 / num4;
+
+// Tulosta vastaus konsoliin
+console.log("Jakolaskun tulos:", divisionResult);
+
+/** Tehtävä: Ostoskori
+ * Kuvitellaan, että olet kehittämässä yksinkertaista verkkokauppasovellusta. Sinun tehtäväsi on luoda ohjelma, joka laskee ostoskorissa olevien tuotteiden yhteishinnan ja tulostaa sen.
+ * - Määrittele muuttujat kullekin ostoskorissa olevalle tuotteelle ja niiden hinnoille.
+ * - Laske tuotteiden yhteishinta ja tallenna se muuttujaan, esimerkiksi yhteishinta.
+ * - Tulosta yhteishinta konsoliin.
+ */
+
+// Määrittele muuttujat kullekin ostoskorissa olevalle tuotteelle
+// ja niiden hinnoille
+
+let product1Price = 12.99;
+let product2Price = 5.49;
+let product3Price = 8.99;
+let product4Price = 15.00;
+
+// Laske tuotteiden yhteishinta ja tallenna se muuttujaan 'totalPrice'
+let totalPrice = product1Price + product2Price + product3Price + product4Price;
+
+// Tulosta yhteishinta konsoliin
+console.log("Ostoskorin yhteishinta: €" + totalPrice.toFixed(2));
+
+/* 
+- Luo muuttujat a ja b ja anna niille kokonaislukuarvot.
+- Käytä yhteen-, vähennys-, kerto- ja jakolaskuoperaattoreita muuttujille a ja b. Tallenna jokainen tulos erilliseen muuttujaan (summa, erotus, tulo, osamäärä, jakojäännös).
+
+- Käytä console.log() -metodia tulostamaan jokaisen operaation tulos konsoliin.
+
+- Lisää kommentteja koodiin selittämään, mitä kukin operaatio tekee.
+*/
+
+// Määritellään muuttujat a ja b, annetaan niille kokonaislukuarvot
+let a = 15;
+let b = 4;
+
+let summa = a + b; // Yhteenlasku (15+4=19)
+
+let erotus = a - b; // Vähennyslasku (15-4=11)
+
+let tulo = a * b; // Kertolasku (15*4=60)
+
+let osamäärä = a / b; // Jakolasku (15/4=3.75)
+
+let jakojäännös = a % b; // Jakojäännös (15%4=3)
+
+console.log("Summa: " + summa);
+console.log("Erotus: " + erotus); 
+console.log("Tulo: " + tulo);
+console.log("Osamäärä " + osamäärä);
+
+/**Tehtävä: Merkkijonojen yhdistäminen
+* Luo kaksi muuttujaa, etunimi ja sukunimi, ja aseta niihin omat etu- ja sukunimesi.
+* Yhdistä nämä kaksi merkkijonoa ja tulosta tulos konsoliin.*/
+
+// Luo kaksi muuttujaa, etunimi ja sukunimi, ja aseta niihin omat nimet
+let etunimi = "Nita";
+let sukunimi = "Ranta-Knuuttila";
+
+//Yhdistä etunimi ja sukunimi
+let kokoNimi = etunimi + " " + sukunimi; //yhdistetään välin kanssa
+// Tulosta yhdistetty nimi konsoliin
+console.log(kokoNimi);
+
+// Kirjoita funktio sum1 siten, että se palauttaa a:n ja b:n summan. Käytä tavallista funktiota
+// Kirjoita funktio sum2, joka on sama kuin yllä, mutta on nuolifunktio
+
+
+// Esimerkki - älä muokkaa
+// console.log(sum1(1, 3));
+// console.log(sum1(2, 5));
+// console.log(sum2(4, 3));
+// console.log(sum2(7, 5));
+
+// Tavallinen funktio sum1, joka palauttaa a:n ja b:n summan
+function sum1(a, b) {
+    return a + b;
+}
+
+// Nuolifunktio sum2, joka on sama kuin sum1, mutta kirjoitettu nuolifunktiona
+const sum2 = (a, b) => a + b;
+
+console.log(sum1(1, 3));
+console.log(sum1(2, 5));
+console.log(sum2(4, 3));
+console.log(sum2 (7, 5));
+
+// Kirjoita funktio multiply1 siten, että se palauttaa a:n ja b:n tulon (kertolaskun tulos). Käytä tavallista funktiota
+// Kirjoita funktio multiply2, joka on nuolifunktio
+
+
+// Esimerkkikäyttö - älä muokkaa
+// console.log(multiply1(2, 4));
+// console.log(multiply2(3, 2));
+
+// Tavallinen funktio multiply1, joka palauttaa a:n ja b:n tulon
+// (kertolaskun tulos)
+function multiply1(a, b) {
+    return a * b;
+}
+
+// Nuolifunktio multiply2, joka on sama kuin multiply1,
+// mutta kirjoitettu nuolifunktiona
+const multiply2 = (a, b) => a * b;
+
+console.log(multiply1(2, 4));
+console.log(multiply2(3,2));
+
+/** Harjoitus: Neliön pinta-ala
+ * Tee funktio nimeltä laskeNelionPintaala, joka ottaa yhden parametrin: sivunPituus.
+ * Funktio laskee annetun neliön pinta-alan kaavalla sivunPituus * sivunPituus ja palauttaa sen.
+ * Testaa funktiota antamalla sille eri sivun pituuksia ja tulosta pinta-alat konsoliin. 
+ * Voit käyttää joko nuolifunktiota tai tavallista funktiota*/
+
+ // Funktio laskeNelionPintaala, joka laskee neliön pinta-alan
+ function laskeNelionPintaala(sivunPituus) {
+    return sivunPituus * sivunPituus; // Pinta-ala = sivunPituus * sivunPituus
+ }
+
+ // Testataan funktiota eri sivun pituuksilla ja tulostetaan
+ // pinta-alat konsoliin
+ console.log("Pinta-ala, kun sivun pituus on 5:", laskeNelionPintaala(5));
+ console.log("Pinta-ala, kun sivun pituus on 10:", laskeNelionPintaala(10));
+ console.log("Pinta-ala, kun sivun pituus on 3:", laskeNelionPintaala(3));
+ console.log("Pinta-ala, kun sivun pituus on 7:", laskeNelionPintaala(7));
+
+ /** Harjoitus: Kolmion pinta-ala
+ * Tee funktio nimeltä laskeKolmionPintaala, joka ottaa kaksi parametria: kannanPituus ja korkeus.
+ * Funktio laskee annetun kolmion pinta-alan kaavalla kannanPituus * korkeus / 2  ja palauttaa sen.
+ * Testaa funktiota antamalla sille eri sivun pituuksia ja tulosta pinta-alat konsoliin. 
+ * Voit käyttää joko nuolifunktiota tai tavallista funktiota*/
+
+ // Funktio laskeKolmionPintaala, joka laskee kolmion pinta-alan
+ function laskeKolmionPintaala(kannanPituus, korkeus) {
+    return (kannanPituus * korkeus) / 2; // Pinta-ala = (kannanPituus * korkeus) / 2
+ }
+
+ // Testataan funktioita eri kannan pituuksilla ja korkeuksilla ja tulostetaan pinta-alat konsoliin
+console.log("Kolmion pinta-ala, kun kannan pituus on 5 ja korkeus on 10:", laskeKolmionPintaala(5, 10));  // 25
+console.log("Kolmion pinta-ala, kun kannan pituus on 7 ja korkeus on 4:", laskeKolmionPintaala(7, 4));  // 14
+console.log("Kolmion pinta-ala, kun kannan pituus on 8 ja korkeus on 3:", laskeKolmionPintaala(8, 3));  // 12
+console.log("Kolmion pinta-ala, kun kannan pituus on 12 ja korkeus on 6:", laskeKolmionPintaala(12, 6));  // 36
+    </script>
+</body>
+</html>
